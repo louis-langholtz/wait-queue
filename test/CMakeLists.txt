@@ -30,9 +30,7 @@ target_link_libraries ( wait_queue_test PRIVATE
 	Threads::Threads wait_queue ring-span-lite circular_buffer Catch2::Catch2WithMain )
 
 enable_testing()
-
-add_test ( NAME run_wait_queue_test COMMAND wait_queue_test )
-set_tests_properties ( run_wait_queue_test 
-  PROPERTIES PASS_REGULAR_EXPRESSION "All tests passed"
-  )
+include(CTest)
+include(Catch)
+catch_discover_tests(tests)
 
