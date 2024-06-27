@@ -32,4 +32,4 @@ jobs:
       - name: build
         run: cd build && cmake --build . --config $BUILD_TYPE
       - name: run-unit-test
-        run: cd build && ctest -C $BUILD_TYPE
+        run: cd build && ctest -C $BUILD_TYPE --output-on-failure
